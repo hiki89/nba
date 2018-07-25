@@ -20,3 +20,11 @@ Route::get('/', 'TeamController@index')->name('index');
 Route::get('/teams/{id}', 'TeamController@show')->name('show');
 
 Route::get('/players/{id}', 'PlayerController@show')->name('player');
+
+Route::get('/register', 'RegisterController@create');
+Route::post('/register', 'RegisterController@store');
+
+Route::get('/login', 'LoginController@create');
+Route::post('/login', 'LoginController@store');
+
+Route::get('/logout', 'LoginController@destroy');

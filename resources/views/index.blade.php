@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.master')
+
+@section('content')
+
 @foreach($teams as $team)
-    <div>
+    <div class="list-unstyled">
         <li><a href="{{ route('show', $team->id) }}">{{ $team->name }}</a></li>
     </div>
 @endforeach
-</body>
-</html>
+
+@endsection
