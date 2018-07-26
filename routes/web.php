@@ -30,3 +30,5 @@ Route::post('/login', 'LoginController@store');
 Route::get('/logout', 'LoginController@destroy');
 
 Route::post('/teams/{team}/comments', 'CommentsController@store')->name('comments');
+
+Route::get('/user/verify/{id}', 'Auth\RegisterController@verifyUser')->name('verify');

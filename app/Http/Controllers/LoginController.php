@@ -26,11 +26,14 @@ class LoginController extends Controller
         $credentials = request()->only(['email', 'password']);
         $message = 'Email or password are incorrect. Please try again.';
 
-        if (auth()->attempt($credentials)) {
-            return redirect('/');
-        } else {
+        if (!auth()->attempt($credentials)) {
             return redirect()->back()->withErrors(['message' => $message]);
+        } else if (auth()->user()->verified == 0) {
+            auth()->logout();
+            return redirect('/login');
         }
+
+        return redirect('/');
     }
 
     public function destroy()

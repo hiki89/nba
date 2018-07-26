@@ -27,15 +27,9 @@
         {{ csrf_field() }}
 
             <div class="form-group">
-                <label for="author">Author</label>
-                <input name="author" type="text" class="form-control" id="author">
-                @include('partials.error-message', ['fieldName' => 'title'])
-            </div>
-
-            <div class="form-group">
-                <label for="text">Comment:</label>
-                <textarea name="text" class="form-control" id="text"></textarea>
-                @include('partials.error-message', ['fieldName' => 'body'])
+                <label for="content">Comment:</label>
+                <textarea name="content" class="form-control" id="content"></textarea>
+                @include('partials.error-message', ['fieldName' => 'content'])
             </div>
 
             <button type="submit" class="btn btn-primary">Submit comment</button>

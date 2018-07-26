@@ -13,6 +13,7 @@ class CommentsController extends Controller
         $this->validate(request(), [
             'content' => 'required|min:10',
         ]);
+        
 
         Comment::create([
             'content' => request('content'),
@@ -20,6 +21,6 @@ class CommentsController extends Controller
             'team_id' => $team->id
         ]);
 
-        return redirect('show');
+        return redirect('/teams/'.$team->id);
     }
 }
