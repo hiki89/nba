@@ -15,4 +15,9 @@ class Team extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function news()
+    {
+        return $this->hasMany(News::class);
+    }
 }
