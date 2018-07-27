@@ -8,13 +8,16 @@ use App\Team;
 
 class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('forbidden.words', ['only' => 'store']);
+    }
     public function store(Team $team)
     {
         $this->validate(request(), [
             'content' => 'required|min:10',
         ]);
         
-
         Comment::create([
             'content' => request('content'),
             'user_id' => auth()->user()->id,

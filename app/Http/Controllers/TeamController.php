@@ -23,4 +23,9 @@ class TeamController extends Controller
         $team = Team::with('players')->find($id);
         return view('show', compact('team'));
     }
+
+    // public function store()
+    // {
+    //     $this->middleware('forbidden.words');
+    // }
 }

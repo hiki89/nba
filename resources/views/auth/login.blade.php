@@ -23,7 +23,7 @@
     @include('partials.error-message', ['fieldName' => 'message'])
 </form>
 
-@if (session('status'))
+{{-- @if (session('status'))
     <div class="alert alert-success">
         {{ session('status') }}
     </div>
@@ -32,6 +32,6 @@
     <div class="alert alert-warning">
         {{ session('warning') }}
     </div>
-@endif
+@endif --}}
 
 @endsection

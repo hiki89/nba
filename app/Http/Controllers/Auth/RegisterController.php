@@ -73,7 +73,6 @@ class RegisterController extends Controller
             'user_id' => $user->id,
             'token' => str_random(40)
         ]);
-        // Mail::to($user->email)->send(new VerifyMail($user));
  
         return $user;
     }
@@ -95,10 +94,4 @@ class RegisterController extends Controller
         
         return redirect('/login')->with('warning', "Sorry your email cannot be identified.");
     }
-
-    // protected function registered(Request $request, $user)
-    // {
-    //     $this->guard()->logout();
-    //     return redirect('/login')->with('status', 'We sent you an activation code. Check your email and click on the link to verify.');
-    // }
 }
