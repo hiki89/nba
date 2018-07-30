@@ -7,9 +7,15 @@ use App\News;
 
 class NewsController extends Controller
 {
-    public function show()
+    public function index()
     {
-        $news = News::all();
+        $news = \App\News::with('user')->latest()->paginate(10);
         return view('news', compact('news'));
+    }
+
+    public function show($id)
+    {
+        $singleNews = News::find($id);
+        return view('single-news', compact('singleNews'));
     }
 }
