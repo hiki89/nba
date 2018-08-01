@@ -2,6 +2,12 @@
 
 @section('content')
 
+@if(Session::has('success'))
+    <div class='alert alert-success'>
+    <strong>{{Session::get('success')}}</strong>
+    </div>
+@endif
+
 <div>
     <ul class="unstyled-list">
     @foreach($news as $vesti)

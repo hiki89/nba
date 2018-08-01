@@ -34,5 +34,7 @@ Route::post('/teams/{team}/comments', 'CommentsController@store')->name('comment
 Route::get('/user/verify/{id}', 'Auth\RegisterController@verifyUser')->name('verify');
 
 Route::get('/news', 'NewsController@index')->name('news');
+Route::get('/news/create', 'NewsController@create');
+Route::post('/news/create', 'NewsController@store');
 Route::get('/news/{id}', 'NewsController@show')->name('single-news');
 Route::get('/news/team/{name}', 'NewsController@teamNews');
