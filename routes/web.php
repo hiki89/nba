@@ -35,3 +35,4 @@ Route::get('/user/verify/{id}', 'Auth\RegisterController@verifyUser')->name('ver
 
 Route::get('/news', 'NewsController@index')->name('news');
 Route::get('/news/{id}', 'NewsController@show')->name('single-news');
+Route::get('/news/team/{name}', 'NewsController@teamNews');
